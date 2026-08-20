@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RotateCcw } from "lucide-react";
+import { RotateCcw, Minus, Plus } from "lucide-react";
  function App() {
   const [count, setCount] = useState(0);
 
@@ -17,7 +17,7 @@ import { RotateCcw } from "lucide-react";
     setCount(0)
   };
 
-  const Minimum = count === 0
+  const minimum = count === 0
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-linear-to-br from-sky-400 via-violet-400 to-pink-500 p-6">
@@ -29,7 +29,7 @@ import { RotateCcw } from "lucide-react";
         </h1>
 
         <p className="mt-1 h-5 text-sm font-medium text-white/90">
-          {Minimum && "Minimum limit reached"}
+          {minimum && "Minimum limit reached"}
         </p>
 
         <div className="my-6 text-white font-extrabold text-8xl leading-none tabular-nums">
@@ -47,19 +47,19 @@ import { RotateCcw } from "lucide-react";
 
           <button
             onClick={decrement}
-            disabled={Minimum}
-            className="h-24 rounded-2xl bg-pink-500/90 text-white text-4xl font-bold shadow-lg hover:bg-pink-600 active:scale-80 transition disabled:opacity-40 disabled:cursor-not-allowed"
+            disabled={minimum}
+            className="flex items-center justify-center p-6 rounded-4xl bg-pink-500/90 text-white text-4xl font-bold shadow-lg hover:bg-pink-600 active:scale-80 transition disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            -
+            <Minus />
           </button>
 
       
           <button
             onClick={increment}
           
-            className=" h-24 font-bold rounded-2xl bg-pink-500/90 text-white text-4xl  shadow-lg hover:bg-pink-600 active:scale-80 transition"
+            className="flex  items-center justify-center p-6 font-bold rounded-4xl bg-pink-500/90 text-white text-4xl  shadow-lg hover:bg-pink-600 active:scale-80 transition"
           >
-            +
+            <Plus />
           </button>
 
         </div>
